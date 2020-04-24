@@ -1,6 +1,6 @@
 # -- Conky settings -- #
 background no 
-update_interval 15
+update_interval 60
  
 cpu_avg_samples 2
 net_avg_samples 2
@@ -25,11 +25,11 @@ own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 200 80
-maximum_width 450 
-
+maximum_width 900
+minimum_size 450 80
+ 
 alignment tl
-gap_x 150
+gap_x 600
 gap_y 350
  
 # -- Graphics settings -- #
@@ -48,8 +48,10 @@ uppercase no
 default_color FFFFFF
  
 TEXT
-${font Santana:size=14}${alignc}TO-DO LIST${alignr}${font Santana:size=12}(${lines /home/mikael/notes.txt})${font}
+${font Santana:size=14}Developpez.com${font}
 ${stippled_hr}
-${voffset 10}${execp ~/.conky/Conky-Rings-Improved/viewnotes.sh}
+#${scroll left 450 2 #
+${voffset 10}${rss https://www.developpez.com/rss 1 item_titles 6}
+#}
 
 # ${stippled_hr 1}

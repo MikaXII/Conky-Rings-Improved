@@ -29,7 +29,7 @@ minimum_size 920 300
 maximum_width 1024
  
 alignment tl
-gap_x 0
+gap_x 150
 gap_y 79
  
 # -- Graphics settings -- #
@@ -48,13 +48,13 @@ uppercase no
 default_color FFFFFF
  
 # -- Lua Load -- #
-lua_load ~/.conky/clock_rings.lua
+lua_load ~/.conky/Conky-Rings-Improved/clock_rings.lua
 lua_draw_hook_pre clock_rings
- 
+ # Home   ${fs_used /home}/${fs_size /home}$font
 TEXT
-  ${font Santana:size=12}  Root   ${fs_used /}/${fs_size /}                Home   ${fs_used /home}/${fs_size /home}$font
+${font Santana:size=12}  Space   ${fs_used /}/${fs_size /}               
 ${voffset 105}${goto 123}${font Santana:size=24}${time %H:%M}${voffset -10}${font Santana:size=10}${font}
 ${voffset -28}${goto 268}${hr 2}
 ${voffset -70}${goto 278}${cpugraph 50,285 d5dcde ffffff} #${voffset -18} ${alignr} ${execi 60 ~/.conky/gmailnotify.sh}
 ${voffset 16}${goto 285}${time %A, %d %B %Y}						
-${font Santana:size=14}${voffset -120}${goto 300}BATTERY     ${battery BAT1}
+${font Santana:size=14}${voffset -120}${goto 300}BATTERY     ${battery BAT0}

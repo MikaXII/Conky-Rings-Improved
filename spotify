@@ -25,12 +25,12 @@ own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 200 80
-maximum_width 450 
-
+minimum_size 450 80
+maximum_width 450
+ 
 alignment tl
-gap_x 150
-gap_y 350
+gap_x 1174
+gap_y 79
  
 # -- Graphics settings -- #
 draw_shades no
@@ -48,8 +48,9 @@ uppercase no
 default_color FFFFFF
  
 TEXT
-${font Santana:size=14}${alignc}TO-DO LIST${alignr}${font Santana:size=12}(${lines /home/mikael/notes.txt})${font}
+${font Santana:size=14}${execp sp current | awk 'NR==4 {print $0}'}${font}
 ${stippled_hr}
-${voffset 10}${execp ~/.conky/Conky-Rings-Improved/viewnotes.sh}
+${voffset 10}${execp sp current | awk 'NR==3 {print $0}'}
+${voffset 10}${execp sp current | awk 'NR==1 {print $0}'}
 
 # ${stippled_hr 1}
